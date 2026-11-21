@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>AlyzDev — Video Library</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/AlyzVD.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <div class="logo"><b>A</b> ALYZ<span>DEV</span></div>
+      <div class="scan-icon"><div class="scan-line"></div><span>AD</span></div>
+      <div class="eyebrow">SECURE ACCESS CHECK</div>
+      <h1>Welcome<br><i>back.</i></h1>
+      <p>Tekan tombol di bawah untuk memulai pemeriksaan tampilan.</p>
+      <button id="scanBtn" class="lime-btn">MULAI PEMERIKSAAN</button>
+      <div class="progress"><span id="progressBar"></span></div>
+      <div id="progressText" class="progress-text">READY · 0%</div>
+      <p class="fine">Animasi ini hanya simulasi antarmuka, bukan pemindaian sidik jari atau autentikasi biometrik.</p>
+    </div>
+  </div>
+
+  <div id="ageGate" class="gate hidden">
+    <div class="gate-card age-card">
+      <div class="logo"><b>A</b> ALYZ<span>DEV</span></div>
+      <div class="eyebrow">AGE CONFIRMATION</div>
+      <h1>Before<br><i>you enter.</i></h1>
+      <p>Apakah Anda sudah berusia minimal 18 tahun untuk menggunakan layanan ini?</p>
+      <button id="yesAge" class="lime-btn">YES, I AM 18+</button>
+      <button id="noAge" class="dark-btn">NO, I AM UNDER 18</button>
+      <p class="fine">Pilih sesuai usia sebenarnya. Konfirmasi ini merupakan pernyataan mandiri, bukan verifikasi identitas.</p>
+    </div>
+  </div>
+
+  <div id="app" class="shell hidden">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">A</span> ALYZ<span>DEV</span></a>
+      <div class="top-actions"><span class="status-dot"></span> VIDEO LIBRARY</div>
+    </header>
+    <main>
+      <section id="videoView" class="view active">
+        <div class="hero"><div class="eyebrow">YOUR PERSONAL VIDEO SPACE</div><h1>Watch what<br><em>moves you.</em></h1><p>Semua koleksi video dalam satu tempat.</p><div class="hero-meta"><span>CURATED COLLECTION</span><span class="line"></span><span id="videoCount">00 VIDEOS</span></div></div>
+        <div class="section-head"><div><div class="eyebrow">THE COLLECTION</div><h2>Explore videos</h2></div><input id="searchInput" class="search" type="search" placeholder="Cari judul atau ID..."></div>
+        <div id="videoGrid" class="video-grid"></div>
+      </section>
+      <section id="playerView" class="view">
+        <button id="backBtn" class="back-btn">← KEMBALI KE VIDEO</button>
+        <div class="player-layout">
+          <div><div id="playerFrame" class="player-frame"></div><div class="player-title-row"><div><div class="eyebrow">NOW PLAYING</div><h2 id="playerTitle"></h2></div><span id="playerId" class="pill"></span></div><p id="playerDescription" class="description">Diputar melalui embed resmi penyedia.</p><div class="player-actions"><button id="favoriteBtn" class="action-btn">＋ Favorite</button><button id="shareBtn" class="action-btn">↗ Share</button></div></div>
+          <aside class="up-next"><div class="eyebrow">UP NEXT</div><div id="relatedList"></div></aside>
+        </div>
+      </section>
+      <section id="favoriteView" class="view"><div class="eyebrow">YOUR SAVED COLLECTION</div><h1 class="page-title">Favorites<span>.</span></h1><div id="favoriteGrid" class="video-grid"></div><p id="emptyFavorites" class="empty-state">Belum ada video favorit.</p></section>
+      <section id="downloadView" class="view"><div class="eyebrow">DOWNLOADS</div><h1 class="page-title">Downloads<span>.</span></h1><div class="download-panel"><h2>Video downloads</h2><p>Halaman ini dapat menampilkan unduhan yang disediakan secara resmi oleh pemilik video. Embed pihak ketiga tidak otomatis menyediakan file unduhan.</p><p class="hint">Gunakan tombol download dari penyedia jika tersedia dan diizinkan.</p></div></section>
+    </main>
+    <nav class="bottom-nav"><button class="nav-item selected" data-view="videoView"><span>01</span> Video</button><button class="nav-item" data-view="favoriteView"><span>02</span> Favorite</button><button class="nav-item" data-view="downloadView"><span>03</span> Download</button></nav>
+    <footer>ALYZDEV © 2026 <span>ID-BASED EMBED LIBRARY</span></footer>
+  </div>
+</body>
+</html>
